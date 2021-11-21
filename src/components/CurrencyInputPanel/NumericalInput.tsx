@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { escapeRegExp } from '../../utils'
@@ -64,9 +64,12 @@ export const Input = React.memo(function InnerInput({
     <StyledInput
       {...rest}
       value={value}
-      onChange={(event) => {
+      onChange={(event: ChangeEvent<HTMLInputElement>) => {
         // replace commas with periods, because we exclusively uses period as the decimal separator
-        enforcer(event.target.value.replace(/,/g, '.'))
+        const target = event.target as typeof event.target & {
+          value?: string;
+        };
+        enforcer((target?.value || "").replace(/,/g, '.'))
       }}
       // universal input options
       inputMode="decimal"

@@ -1,6 +1,7 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+/* eslint-enable react/prop-types */
 import { Heading, Text } from '@pancakeswap/uikit'
-import { NormalComponents, SpecialComponents } from 'react-markdown/src/ast-to-react'
+import { NormalComponents, ReactMarkdownProps, SpecialComponents } from 'react-markdown/src/ast-to-react'
 import styled from 'styled-components'
 
 const Table = styled.table`
@@ -44,8 +45,12 @@ const markdownComponents: Partial<NormalComponents & SpecialComponents> = {
   h4: Title,
   h5: Title,
   h6: Title,
-  p: (props) => {
-    return <Text as="p" my="16px" {...props} />
+  p: (props: React.ClassAttributes<HTMLParagraphElement> & React.HTMLAttributes<HTMLParagraphElement> & ReactMarkdownProps) => {
+
+    // eslint-disable-next-line
+    return <p
+      style={{ fontSize: "16px" }}
+      {...props}>props.</p>
   },
   table: Table,
   ol: (props) => {

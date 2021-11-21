@@ -9,7 +9,7 @@ import { getLibrary } from 'utils/web3React'
 import { LanguageProvider } from 'contexts/Localization'
 import { RefreshContextProvider } from 'contexts/RefreshContext'
 import { ToastsProvider } from 'contexts/ToastsContext'
-import store from 'state'
+import store from 'state';
 
 const ThemeProviderWrapper = (props) => {
   const [isDark] = useThemeManager()

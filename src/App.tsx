@@ -19,7 +19,7 @@ import PageLoader from './components/Loader/PageLoader'
 import EasterEgg from './components/EasterEgg'
 import GlobalCheckClaimStatus from './components/GlobalCheckClaimStatus'
 import history from './routerHistory'
-// Views included in the main bundle
+// Views included in the main bundle. 
 import Pools from './views/Pools'
 import Swap from './views/Swap'
 import {
@@ -55,12 +55,12 @@ const NftMarket = lazy(() => import('./views/Nft/market'))
 const ProfileCreation = lazy(() => import('./views/ProfileCreation'))
 const PancakeSquad = lazy(() => import('./views/PancakeSquad'))
 
-// This config is required for number formatting
+// This config is required for number formatting.
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
   DECIMAL_PLACES: 80,
 })
-
+// const teste = "T";
 const App: React.FC = () => {
   const { account } = useWeb3React()
 
