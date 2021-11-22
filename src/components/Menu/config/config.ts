@@ -7,8 +7,8 @@ export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
 
 /**
  * @deprecated
- * @description Keeping here just for fast develope consulting 
- * @description This component function will be removed forever 
+ * @description Keeping here just for fast develope consulting
+ * @description This component function will be removed forever
  */
 const configOLD: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
@@ -116,13 +116,13 @@ const configOLD: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
 
 const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
-    label: t('Trade'),
+    label: t('Swap'),
     icon: 'Swap',
     href: '/swap',
     showItemsOnMobile: false,
     items: [
       {
-        label: t('Exchange'),
+        label: t('Swap'),
         href: '/swap',
       },
       {
@@ -132,7 +132,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     ],
   },
   {
-    label: t('Earn'),
+    label: t('Farms'),
     href: '/farms',
     icon: 'Earn',
     items: [
@@ -146,72 +146,31 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       },
     ],
   },
+
   {
-    label: t('Win'),
-    href: '/prediction',
-    icon: 'Trophy',
-    items: [
-      {
-        label: t('Prediction (BETA)'),
-        href: '/prediction',
-      },
-      {
-        label: t('Lottery'),
-        href: '/lottery',
-      },
-    ],
-  },
-  {
-    label: t('NFT'),
-    href: `${nftsBaseUrl}`,
-    icon: 'Nft',
-    items: [
-      {
-        label: t('Overview'),
-        href: `${nftsBaseUrl}`,
-      },
-      {
-        label: t('Collections'),
-        href: `${nftsBaseUrl}/collections`,
-      },
-    ],
-  },
-  {
-    label: '',
+    label: 'Get details',
     href: '/info',
     icon: 'More',
     hideSubNav: true,
     items: [
       {
-        label: t('Info'),
+        label: t('Graph infos'),
         href: '/info',
-      },
-      {
-        label: t('IFO'),
-        href: '/ifo',
-      },
-      {
-        label: t('Voting'),
-        href: '/voting',
-      },
-      {
-        type: DropdownMenuItemType.DIVIDER,
-      },
-      {
-        label: t('Leaderboard'),
-        href: '/teams',
       },
       {
         type: DropdownMenuItemType.DIVIDER,
       },
       {
         label: t('Blog'),
-        href: 'https://medium.com/pancakeswap',
+        href: 'https://blog.arizap.com.br/',
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
       {
+        type: DropdownMenuItemType.DIVIDER,
+      },
+      {
         label: t('Docs'),
-        href: 'https://docs.pancakeswap.finance',
+        href: 'https://docs.arizap.com.br',
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],
