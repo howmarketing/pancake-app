@@ -33,7 +33,7 @@ const useGetProfileCosts = () => {
           numberCakeToUpdate,
         })
         setIsLoading(false)
-      } catch (error) {
+      } catch (error: any) {
         toastError(t('Error'), t('Could not retrieve CAKE costs for profile'))
       }
     }

@@ -198,7 +198,7 @@ const SellModal: React.FC<SellModalProps> = ({ variant, nftToSell, onDismiss }) 
       try {
         const approvedForContract = await collectionContract.isApprovedForAll(account, nftMarketContract.address)
         return approvedForContract
-      } catch (error) {
+      } catch (error: any) {
         return false
       }
     },

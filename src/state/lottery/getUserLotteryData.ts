@@ -115,7 +115,7 @@ export const getGraphLotteryUser = async (
         }),
       }
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     user = blankUser
   }

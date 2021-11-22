@@ -33,7 +33,7 @@ export const useProfileForAddress = (address: string) => {
       try {
         const profile = await getProfile(address)
         setProfileState({ profile, isFetching: false })
-      } catch (error) {
+      } catch (error: any) {
         console.error(`Failed to fetch profile for address ${address}`, error)
         setProfileState({ profile: null, isFetching: false })
       }
@@ -65,7 +65,7 @@ export const useAchievementsForAddress = (address: string) => {
       try {
         const achievements = await getAchievements(address)
         setState({ achievements, isFetching: false })
-      } catch (error) {
+      } catch (error: any) {
         console.error(`Failed to fetch achievements for address ${address}`, error)
         setState({ achievements: [], isFetching: false })
       }

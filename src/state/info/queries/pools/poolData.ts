@@ -98,7 +98,7 @@ const fetchPoolData = async (
     `
     const data = await request<PoolsQueryResponse>(INFO_CLIENT, query)
     return { data, error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch pool data', error)
     return { error: true }
   }

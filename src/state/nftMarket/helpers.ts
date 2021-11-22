@@ -155,7 +155,7 @@ export const getCollectionSg = async (collectionAddress: string): Promise<Collec
       { collectionAddress: collectionAddress.toLowerCase() },
     )
     return res.collection
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch collection', error)
     return null
   }
@@ -178,7 +178,7 @@ export const getCollectionsSg = async (): Promise<CollectionMarketDataBaseFields
       `,
     )
     return res.collections
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch NFT collections', error)
     return []
   }
@@ -215,7 +215,7 @@ export const getNftsFromCollectionSg = async (
       { collectionAddress: collectionAddress.toLowerCase(), skip, first },
     )
     return res.collection.nfts
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch NFTs from collection', error)
     return []
   }
@@ -253,7 +253,7 @@ export const getNftsByBunnyIdSg = async (
       },
     )
     return res.nfts
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to fetch collection NFTs for bunny id ${bunnyId}`, error)
     return []
   }
@@ -291,7 +291,7 @@ export const getMarketDataForTokenIds = async (
       },
     )
     return res.collection.nfts
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to fetch market data for NFTs stored tokens`, error)
     return []
   }
@@ -321,7 +321,7 @@ export const getNftsMarketData = async (
     )
 
     return res.nfts
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch NFTs market data', error)
     return []
   }
@@ -353,7 +353,7 @@ export const getAllPancakeBunniesLowestPrice = async (bunnyIds: string[]): Promi
           rawResponse[subQueryKey].length > 0 ? parseFloat(rawResponse[subQueryKey][0].currentAskPrice) : Infinity,
       }
     }, {})
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch PancakeBunnies lowest prices', error)
     return {}
   }
@@ -384,7 +384,7 @@ export const getAllPancakeBunniesRecentUpdatedAt = async (bunnyIds: string[]): P
         [bunnyId]: rawResponse[subQueryKey].length > 0 ? Number(rawResponse[subQueryKey][0].updatedAt) : -Infinity,
       }
     }, {})
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch PancakeBunnies latest market updates', error)
     return {}
   }
@@ -408,7 +408,7 @@ export const getLowestPriceInCollection = async (collectionAddress: string) => {
 
     const [nftSg] = response
     return parseFloat(nftSg.currentAskPrice)
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to lowest price NFTs in collection ${collectionAddress}`, error)
     return 0
   }
@@ -457,7 +457,7 @@ export const getUserActivity = async (
     )
 
     return res.user || { askOrderHistory: [], buyTradeHistory: [], sellTradeHistory: [] }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch user Activity', error)
     return {
       askOrderHistory: [],
@@ -490,7 +490,7 @@ export const getLatestListedNfts = async (first: number): Promise<TokenMarketDat
     )
 
     return res.nfts
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch NFTs market data', error)
     return []
   }
@@ -592,7 +592,7 @@ export const fetchWalletTokenIdsForCollections = async (
         const tokenIdBn: ethers.BigNumber = await contract.tokenOfOwnerByIndex(account, index)
         const tokenId = tokenIdBn.toString()
         return tokenId
-      } catch (error) {
+      } catch (error: any) {
         console.error('getTokenIdAndData', error)
         return null
       }

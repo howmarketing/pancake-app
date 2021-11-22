@@ -101,7 +101,7 @@ export const useCheckVaultApprovalStatus = () => {
       try {
         const currentAllowance = await cakeContract.allowance(account, cakeVaultContract.address)
         setIsVaultApproved(currentAllowance.gt(0))
-      } catch (error) {
+      } catch (error: any) {
         setIsVaultApproved(false)
       }
     }

@@ -63,7 +63,7 @@ const fetchBnbPrices = async (
         week: parseFloat(data.oneWeek?.bnbPrice ?? '0'),
       },
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch BNB prices', error)
     return {
       error: true,

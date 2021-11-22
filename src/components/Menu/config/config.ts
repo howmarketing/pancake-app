@@ -1,10 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { MenuItemsType, DropdownMenuItemType } from '@pancakeswap/uikit'
 import { ContextApi } from 'contexts/Localization/types'
 import { nftsBaseUrl } from 'views/Nft/market/constants'
 
 export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
 
-const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
+/**
+ * @deprecated
+ * @description Keeping here just for fast develope consulting
+ * @description This component function will be removed forever
+ */
+const configOLD: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
     label: t('Trade'),
     icon: 'Swap',
@@ -102,6 +108,69 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
       {
         label: t('Docs'),
         href: 'https://docs.pancakeswap.finance',
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+    ],
+  },
+]
+
+const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
+  {
+    label: t('Swap'),
+    icon: 'Swap',
+    href: '/swap',
+    showItemsOnMobile: false,
+    items: [
+      {
+        label: t('Swap'),
+        href: '/swap',
+      },
+      {
+        label: t('Liquidity'),
+        href: '/liquidity',
+      },
+    ],
+  },
+  {
+    label: t('Farms'),
+    href: '/farms',
+    icon: 'Earn',
+    items: [
+      {
+        label: t('Farms'),
+        href: '/farms',
+      },
+      {
+        label: t('Pools'),
+        href: '/pools',
+      },
+    ],
+  },
+
+  {
+    label: 'Get details',
+    href: '/info',
+    icon: 'More',
+    hideSubNav: true,
+    items: [
+      {
+        label: t('Graph infos'),
+        href: '/info',
+      },
+      {
+        type: DropdownMenuItemType.DIVIDER,
+      },
+      {
+        label: t('Blog'),
+        href: 'https://blog.arizap.com.br/',
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+      {
+        type: DropdownMenuItemType.DIVIDER,
+      },
+      {
+        label: t('Docs'),
+        href: 'https://docs.arizap.com.br',
         type: DropdownMenuItemType.EXTERNAL_LINK,
       },
     ],

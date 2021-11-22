@@ -103,7 +103,7 @@ const useFetchSearchResults = (
           loading: false,
           error: false,
         })
-      } catch (error) {
+      } catch (error: any) {
         console.error(`Search failed for ${searchString}`, error)
         setSearchResults({
           tokens: [],

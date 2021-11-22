@@ -131,7 +131,7 @@ export const fetchNftsFromCollections = createAsyncThunk<
         marketData,
       }
     })
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to fetch collection NFTs for ${collectionAddress}`, error)
     return []
   }
@@ -230,7 +230,7 @@ export const fetchNewPBAndUpdateExisting = createAsyncThunk<
         return combineApiAndSgResponseToNftToken(apiMetadata, marketData, attributes)
       })
       return [...updatedTokens, ...moreTokensWithRequestedBunnyId]
-    } catch (error) {
+    } catch (error: any) {
       console.error(`Failed to update PancakeBunnies NFTs`, error)
       return []
     }

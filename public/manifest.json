@@ -1,8 +1,8 @@
 {
-  "short_name": "PancakeSwap",
-  "name": "PancakeSwap",
-  "description": "Farm CAKE with Pancake LP Tokens",
-  "homepage_url": "https://pancakeswap.finance",
+  "short_name": "ArizapYield",
+  "name": "ArizapYield",
+  "description": "Farm Near Fluxus with Arizap LP Tokens",
+  "homepage_url": "https://deploy.arizap.com.br/",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1FC7D4",

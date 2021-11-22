@@ -1,5 +1,5 @@
 import { InjectedConnector } from '@web3-react/injected-connector'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
+import { WalletConnectConnector, WalletConnectConnectorArguments } from '@web3-react/walletconnect-connector'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import { ConnectorNames } from '@pancakeswap/uikit'
 import { ethers } from 'ethers'
@@ -11,10 +11,18 @@ const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
 
 const injected = new InjectedConnector({ supportedChainIds: [chainId] })
 
-const walletconnect = new WalletConnectConnector({
+class WalletConnectConnectorCustom extends WalletConnectConnector{
+  public pollingInterval:number;
+  constructor(config:WalletConnectConnectorArguments & {pollingInterval?:number|undefined|string}){
+    const superArgs = {rpc:config.rpc,qrcode:config.qrcode};
+    super(superArgs);
+  }
+}
+
+const walletconnect = new WalletConnectConnectorCustom({
   rpc: { [chainId]: rpcUrl },
   qrcode: true,
-  pollingInterval: POLLING_INTERVAL,
+  pollingInterval: POLLING_INTERVAL
 })
 
 const bscConnector = new BscConnector({ supportedChainIds: [chainId] })

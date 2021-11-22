@@ -73,7 +73,7 @@ const BuyTicketsButtons: React.FC<BuyTicketsProps> = ({
           const response = await cakeContract.allowance(account, nftSaleContract.address)
           const currentAllowance = ethersToBigNumber(response)
           return currentAllowance.gt(0)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },

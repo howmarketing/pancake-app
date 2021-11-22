@@ -81,7 +81,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
       try {
         const currentAllowance = await wbnbContract.allowance(account, nftMarketContract.address)
         return currentAllowance.gt(0)
-      } catch (error) {
+      } catch (error: any) {
         return false
       }
     },

@@ -67,7 +67,9 @@ const AddressInputSelect: React.FC<AddressInputSelectProps> = ({
   const { isFetching, resultFound, value } = state
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    const { value: newValue } = evt.target
+    const { value: newValue } = evt.target as typeof evt.target & {
+      value?: string | undefined
+    };
     setState((prevState) => ({
       ...prevState,
       value: newValue,

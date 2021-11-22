@@ -35,7 +35,7 @@ export const multiQuery = async (
       skip += skipCount
     }
     return fetchedData
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch info data', error)
     return null
   }

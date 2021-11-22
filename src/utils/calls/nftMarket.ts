@@ -16,7 +16,7 @@ export const buyTokenUsingBNB = async (
     const tx = await contract.buyTokenUsingBNB(collectionAddress, tokenId)
     const receipt = await tx.wait()
     return receipt.transactionHash
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return null
   }
@@ -40,7 +40,7 @@ export const buyTokenUsingWBNB = async (
     const tx = await contract.buyTokenUsingWBNB(collectionAddress, tokenId, price)
     const receipt = await tx.wait()
     return receipt.transactionHash
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return null
   }
@@ -64,7 +64,7 @@ export const createAskOrder = async (
     const tx = await contract.createAskOrder(collectionAddress, tokenId, askPrice)
     const receipt = await tx.wait()
     return receipt.transactionHash
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return null
   }
@@ -88,7 +88,7 @@ export const modifyAskOrder = async (
     const tx = await contract.modifyAskOrder(collectionAddress, tokenId, newPrice)
     const receipt = await tx.wait()
     return receipt.transactionHash
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return null
   }
@@ -110,7 +110,7 @@ export const cancelAskOrder = async (
     const tx = await contract.cancelAskOrder(collectionAddress, tokenId)
     const receipt = await tx.wait()
     return receipt.transactionHash
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return null
   }
@@ -126,7 +126,7 @@ export const getPendingRevenue = async (contract: ethers.Contract, userAddress: 
   try {
     const res = await contract.pendingRevenue(userAddress)
     return res
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return null
   }
@@ -142,7 +142,7 @@ export const claimPendingRevenue = async (contract: ethers.Contract): Promise<st
     const tx = await contract.claimPendingRevenue()
     const receipt = await tx.wait()
     return receipt.transactionHash
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return null
   }

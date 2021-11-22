@@ -29,7 +29,7 @@ const getTokenChartData = async (skip: number, address: string): Promise<{ data?
     })
     const data = tokenDayDatas.map(mapDayData)
     return { data, error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch token chart data', error)
     return { error: true }
   }

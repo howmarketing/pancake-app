@@ -79,7 +79,7 @@ const fetchTokenData = async (
     `
     const data = await request<TokenQueryResponse>(INFO_CLIENT, query)
     return { data, error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch token data', error)
     return { error: true }
   }

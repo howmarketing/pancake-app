@@ -57,7 +57,7 @@ const StyledCard = styled(Card)`
   margin: auto;
 `
 
-const Header = styled(CardHeader)<{ ifoId: string }>`
+const Header = styled(CardHeader) <{ ifoId: string }>`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -122,7 +122,7 @@ const IfoFoldableCard: React.FC<IfoFoldableCardProps> = ({ ifo, publicIfoData, w
           {t('You can now participate in the %symbol% IFO.', { symbol: ifo.token.symbol })}
         </ToastDescriptionWithTx>,
       )
-    } catch (error) {
+    } catch (error: any) {
       setEnableStatus(EnableStatus.DISABLED)
     }
   }
@@ -133,7 +133,7 @@ const IfoFoldableCard: React.FC<IfoFoldableCardProps> = ({ ifo, publicIfoData, w
         const response = await raisingTokenContract.allowance(account, contract.address)
         const currentAllowance = new BigNumber(response.toString())
         setEnableStatus(currentAllowance.lte(0) ? EnableStatus.DISABLED : EnableStatus.ENABLED)
-      } catch (error) {
+      } catch (error: any) {
         setEnableStatus(EnableStatus.DISABLED)
       }
     }

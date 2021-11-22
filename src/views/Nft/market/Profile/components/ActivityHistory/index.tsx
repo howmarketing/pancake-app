@@ -55,7 +55,7 @@ const ActivityHistory = () => {
         const addressActivity = await getUserActivity(accountAddress.toLocaleLowerCase())
         setSortedUserActivities(sortUserActivity(accountAddress, addressActivity))
         setIsLoading(false)
-      } catch (error) {
+      } catch (error: any) {
         console.error('Failed to fetch address activity', error)
       }
     }

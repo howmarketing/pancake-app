@@ -1,4 +1,4 @@
-import BigNumber from 'bignumber.js'
+import {BigNumber} from 'bignumber.js'
 import { Token } from '@pancakeswap/sdk'
 
 export type TranslatableText =

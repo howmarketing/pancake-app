@@ -41,7 +41,7 @@ const ClaimCheck = () => {
       } else {
         onPresentNothingToClaimModal()
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Unable to check v1 history', error)
     } finally {
       setIsFetching(false)

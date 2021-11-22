@@ -16,7 +16,7 @@ const useNftOwner = (nft: NftToken) => {
       try {
         const tokenOwner = await collectionContract.ownerOf(tokenId)
         setOwner(tokenOwner)
-      } catch (error) {
+      } catch (error: any) {
         setOwner(null)
       } finally {
         setIsLoadingOwner(false)
