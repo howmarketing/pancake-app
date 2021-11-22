@@ -24,7 +24,7 @@
     ],
     "resolveJsonModule": true,
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "outDir": "./build",
     "removeComments": true,
     "esModuleInterop": true,
