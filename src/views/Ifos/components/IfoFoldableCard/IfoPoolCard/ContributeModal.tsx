@@ -59,7 +59,7 @@ const ContributeModal: React.FC<Props> = ({
           const response = await raisingTokenContract.allowance(account, contract.address)
           const currentAllowance = new BigNumber(response.toString())
           return currentAllowance.gt(0)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },
@@ -99,9 +99,8 @@ const ContributeModal: React.FC<Props> = ({
         {limitPerUserInLP.isGreaterThan(0) && (
           <Flex justifyContent="space-between" mb="16px">
             <Text>{t('Max. token entry')}</Text>
-            <Text>{`${formatNumber(getBalanceAmount(limitPerUserInLP, currency.decimals).toNumber(), 3, 3)} ${
-              ifo.currency.symbol
-            }`}</Text>
+            <Text>{`${formatNumber(getBalanceAmount(limitPerUserInLP, currency.decimals).toNumber(), 3, 3)} ${ifo.currency.symbol
+              }`}</Text>
           </Flex>
         )}
         <Flex justifyContent="space-between" mb="8px">

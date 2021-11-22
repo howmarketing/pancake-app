@@ -45,7 +45,7 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
         try {
           const response = await cakeContract.allowance(account, profileContract.address)
           return response.gte(minimumCakeRequired)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },

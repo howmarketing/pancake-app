@@ -41,7 +41,7 @@ const StyledModal = styled(Modal)`
   max-width: 320px;
 `
 
-const ShortcutButtonsWrapper = styled(Flex)<{ isVisible: boolean }>`
+const ShortcutButtonsWrapper = styled(Flex) <{ isVisible: boolean }>`
   justify-content: space-between;
   margin-top: 8px;
   margin-bottom: 24px;
@@ -245,7 +245,7 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
           const response = await cakeContract.allowance(account, lotteryContract.address)
           const currentAllowance = ethersToBigNumber(response)
           return currentAllowance.gt(0)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },

@@ -23,8 +23,8 @@ const multicall = async <T = any>(abi: any[], calls: Call[]): Promise<T> => {
     const res = returnData.map((call, i) => itf.decodeFunctionResult(calls[i].name, call))
 
     return res
-  } catch (error) {
-    throw new Error(error)
+  } catch (error:any) {
+    throw new Error((typeof error === "string" ? error : "multicall error"))
   }
 }
 

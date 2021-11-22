@@ -82,7 +82,7 @@ const fetchPoolTransactions = async (address: string): Promise<{ data?: Transact
     const burns = data.burns.map(mapBurns)
     const swaps = data.swaps.map(mapSwaps)
     return { data: [...mints, ...burns, ...swaps], error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to fetch transactions for pool ${address}`, error)
     return {
       error: true,

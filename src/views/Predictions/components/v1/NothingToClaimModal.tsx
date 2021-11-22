@@ -89,7 +89,7 @@ const CollectRoundWinningsModal: React.FC<InjectedModalProps> = ({ onDismiss }) 
       try {
         const response = await getAllV1History({ user: account.toLowerCase() })
         setHistory(response)
-      } catch (error) {
+      } catch (error: any) {
         console.error('Unable to fetch history', error)
       } finally {
         setIsFetching(false)

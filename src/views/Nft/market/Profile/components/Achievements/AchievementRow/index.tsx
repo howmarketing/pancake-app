@@ -69,7 +69,7 @@ const AchievementRow: React.FC<AchievementRowProps> = ({ achievement, onCollectS
       } else {
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       }
-    } catch (error) {
+    } catch (error: any) {
       toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
     } finally {
       setIsCollecting(false)

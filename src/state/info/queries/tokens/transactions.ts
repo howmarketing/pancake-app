@@ -148,7 +148,7 @@ const fetchTokenTransactions = async (address: string): Promise<{ data?: Transac
     const swaps1 = data.swapsAs1.map(mapSwaps)
 
     return { data: [...mints0, ...mints1, ...burns0, ...burns1, ...swaps0, ...swaps1], error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to fetch transactions for token ${address}`, error)
     return {
       error: true,

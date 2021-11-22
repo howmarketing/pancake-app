@@ -117,7 +117,7 @@ const fetchTokenPriceData = async (
     }
 
     return { data: formattedHistory, error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to fetch price data for token ${address}`, error)
     return {
       error: true,

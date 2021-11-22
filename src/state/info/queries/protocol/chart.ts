@@ -28,7 +28,7 @@ const getOverviewChartData = async (skip: number): Promise<{ data?: ChartEntry[]
     })
     const data = pancakeDayDatas.map(mapDayData)
     return { data, error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch overview chart data', error)
     return { error: true }
   }

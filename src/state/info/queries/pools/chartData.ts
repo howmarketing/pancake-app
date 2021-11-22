@@ -29,7 +29,7 @@ const getPoolChartData = async (skip: number, address: string): Promise<{ data?:
     })
     const data = pairDayDatas.map(mapPairDayData)
     return { data, error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch pool chart data', error)
     return { error: true }
   }

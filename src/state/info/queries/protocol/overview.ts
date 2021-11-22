@@ -32,7 +32,7 @@ const getOverviewData = async (block?: number): Promise<{ data?: OverviewRespons
     }`
     const data = await request<OverviewResponse>(INFO_CLIENT, query)
     return { data, error: false }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Failed to fetch info overview', error)
     return { data: null, error: true }
   }

@@ -56,7 +56,7 @@ const SlippageTabs = () => {
         if (!Number.isNaN(valueAsIntFromRoundedFloat) && valueAsIntFromRoundedFloat < 5000) {
           setUserSlippageTolerance(valueAsIntFromRoundedFloat)
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(error)
       }
     }
@@ -70,7 +70,7 @@ const SlippageTabs = () => {
       if (!Number.isNaN(valueAsInt) && valueAsInt > 0) {
         setTtl(valueAsInt)
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error)
     }
   }
@@ -155,8 +155,8 @@ const SlippageTabs = () => {
             {slippageError === SlippageError.InvalidInput
               ? t('Enter a valid slippage percentage')
               : slippageError === SlippageError.RiskyLow
-              ? t('Your transaction may fail')
-              : t('Your transaction may be frontrun')}
+                ? t('Your transaction may fail')
+                : t('Your transaction may be frontrun')}
           </Text>
         )}
       </Flex>

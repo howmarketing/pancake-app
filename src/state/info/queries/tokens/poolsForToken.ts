@@ -50,7 +50,7 @@ const fetchPoolsForToken = async (
       error: false,
       addresses: data.asToken0.concat(data.asToken1).map((p) => p.id),
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Failed to fetch pools for token ${address}`, error)
     return {
       error: true,

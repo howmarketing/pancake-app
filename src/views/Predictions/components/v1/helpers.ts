@@ -46,7 +46,7 @@ export const getAllV1History = (where = {}): Promise<Record<string, any>[]> => {
         } else {
           getHistoryChunk(skip + 1000)
         }
-      } catch (error) {
+      } catch (error: any) {
         reject(error)
       }
     }

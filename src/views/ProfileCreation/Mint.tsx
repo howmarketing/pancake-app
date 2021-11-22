@@ -63,7 +63,7 @@ const Mint: React.FC = () => {
         try {
           const response = await cakeContract.allowance(account, bunnyFactoryContract.address)
           return response.gte(minimumCakeRequired)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },
