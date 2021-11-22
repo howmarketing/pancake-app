@@ -19,18 +19,12 @@
     "es2021": true,
     "node": true
   },
-  //  "extends": "@pancakeswap/eslint-config-pancake",
-  "extends": [
-    "standard",
-    "prettier"
-  ],
-  // "extends": "react-scripts/node_modules/eslint-config-react-app",
-  "plugins": [
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "extends": "@pancakeswap/eslint-config-pancake",
+  // "extends": ["standard","prettier"],
+  // "plugins": ["@typescript-eslint","prettier"],
+  // "extends": "react-scripts/eslint-config-react-app",
   "rules": {
-    // "prettier/prettier": "error",
+    "prettier/prettier": 1,
     "no-console": [
       "warn",
       {
@@ -42,7 +36,7 @@
         ]
       }
     ],
-    "no-plusplus": 0,
+    "no-plusplus": 1,
     "prefer-destructuring": [
       "warn",
       {
@@ -51,17 +45,17 @@
       }
     ],
     "no-underscore-dangle": 0,
-    // "import/prefer-default-export": 0,
+    "import/prefer-default-export": 1,
     // Start temporary rules
     // These rules are here just to keep the lint error to 0 during the migration to the new rule set
     // They need to be removed and fixed as soon as possible
     // "@typescript-eslint/ban-ts-comment": [1,{"ts-ignore": true,"ts-nocheck": true}],
     // "@typescript-eslint/ban-ts-comment": 0,
-    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 1,
     "@typescript-eslint/no-explicit-any": 0,
-    "radix": 0,
-    "import/no-extraneous-dependencies": 0,
-    "jsx-a11y/media-has-caption": 0,
+    "radix": 1,
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/media-has-caption": "off",
     // Exchange
     "no-param-reassign": [
       "warn",
